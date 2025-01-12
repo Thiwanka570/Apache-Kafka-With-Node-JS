@@ -1,7 +1,7 @@
-const { kafka } = require('kafkajs')
+const { Kafka } = require('kafkajs')
 
 // create new kafka instance
-const kafka = new kafka({
+const kafka = new Kafka({
     clientId: 'my-sample-app',
     brokers: ['localhost:9092']
 })
@@ -15,9 +15,9 @@ const run = async () => {
     await producer.connect();
 
     await producer.send({
-        topic: 'text-topic',
+        topic: 'test-topic2',
         messages: [
-            { value: 'hello kafka with node js...' }
+            { value: 'hello kafka with node js..' }
         ]
     })
 }
